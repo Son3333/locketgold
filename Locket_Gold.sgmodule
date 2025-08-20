@@ -3,7 +3,10 @@
 #!author=Son3333
 
 [Script]
-# Sửa phản hồi từ RevenueCat để unlock Gold
+# Xoá header trước khi gửi request
+Locket_Gold_Header = type=http-request,pattern=^https:\/\/api\.revenuecat\.com\/v1\/subscribers\/.*,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/Son3333/locketgold/main/LKG_delete_header.js,script-update-interval=0
+
+# Sửa response để unlock Gold
 Locket_Gold = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/v1\/subscribers\/.*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Son3333/locketgold/main/Locket_Gold.js,script-update-interval=0
 
 [MITM]
